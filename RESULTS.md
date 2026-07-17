@@ -99,3 +99,25 @@ outliers detected, result completely unchanged (p = 0.008 either way).
 Engagement is the solid, load-bearing finding; the pupil U-shape is a
 weaker, secondary observation.
 
+## Supporting literature (found by Varad)
+
+Ortiz, Aziz & Hestrin (2020, Cell Reports), "Motivation and Engagement during
+Visually Guided Behavior" - independent support for both main findings above,
+from a completely different lab/setup (head-fixed 2AFC with V1 electrophysiology,
+not IBL data).
+
+They use running miss rate (10-trial blocks) as their engagement signal, same
+basic idea as the rolling miss-rate score I built independently, and find a
+sharp transition from near-zero to very high miss rate when mice disengage.
+
+More importantly for the pupil result: they directly tested whether pre-trial
+pupil diameter predicts contrast threshold, bias, or lapse rate (splitting
+trials into small-pupil vs large-pupil groups) and found no difference on any
+of the three. Pupil diameter didn't even decrease during disengagement (if
+anything it was ~10% larger), arguing directly against reduced arousal driving
+disengagement. Basically an independent replication of the null pupil result
+above, from a different species-adjacent paradigm.
+
+They also found V1 spike counts drop significantly during disengagement,
+giving a plausible neural mechanism for why engagement (not pupil) tracks
+performance.	
