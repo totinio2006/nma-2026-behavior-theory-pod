@@ -29,5 +29,4 @@ post-training, not mid-training. Full writeup in `RESULTS.md`.
 pip install psytrack ONE-api
 ```
 
-Data expected at `mice_pupil.csv` in the same folder (not committed here,
-ask in the pod Discord for the sheet).
+Data included as `mice_pupil.csv` in this repo - no need to request it separately.
