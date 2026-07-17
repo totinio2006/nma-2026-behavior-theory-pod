@@ -1,0 +1,767 @@
+subject,training_status
+CSHL045,in training
+CSHL045,
+CSHL045,untrainable
+CSHL045,trained 1b
+CSHL045,ready4ephysrig
+CSHL045,ready4delay
+CSHL045,ready4recording
+CSHL046,in training
+CSHL046,
+CSHL046,trained 1a
+CSHL046,trained 1b
+CSHL046,ready4ephysrig
+CSHL046,ready4delay
+CSHL046,ready4recording
+CSHL047,in training
+CSHL047,
+CSHL047,trained 1b
+CSHL047,ready4ephysrig
+CSHL047,ready4delay
+CSHL049,in training
+CSHL049,
+CSHL049,trained 1a
+CSHL049,trained 1b
+CSHL049,ready4ephysrig
+CSHL049,ready4delay
+CSHL049,ready4recording
+CSHL051,
+CSHL051,in training
+CSHL051,trained 1a
+CSHL051,trained 1b
+CSHL051,ready4ephysrig
+CSHL051,ready4delay
+CSHL052,in training
+CSHL052,
+CSHL052,untrainable
+CSHL052,trained 1b
+CSHL052,ready4ephysrig
+CSHL052,ready4delay
+CSHL053,in training
+CSHL053,
+CSHL053,trained 1a
+CSHL053,trained 1b
+CSHL053,ready4ephysrig
+CSHL053,ready4delay
+CSHL053,ready4recording
+CSHL054,in training
+CSHL054,
+CSHL054,trained 1a
+CSHL054,trained 1b
+CSHL054,ready4ephysrig
+CSHL054,ready4delay
+CSHL055,in training
+CSHL055,
+CSHL055,trained 1b
+CSHL055,ready4ephysrig
+CSHL055,ready4delay
+CSHL058,in training
+CSHL058,
+CSHL058,trained 1a
+CSHL058,trained 1b
+CSHL058,ready4ephysrig
+CSHL058,ready4delay
+CSHL058,ready4recording
+CSHL059,in training
+CSHL059,
+CSHL059,trained 1b
+CSHL059,ready4ephysrig
+CSHL059,ready4delay
+CSHL060,in training
+CSHL060,
+CSHL060,trained 1b
+CSHL060,ready4ephysrig
+CSHL060,ready4delay
+CSHL060,ready4recording
+CSHL_001,in training
+CSHL_001,
+CSHL_001,untrainable
+CSHL_001,trained 1a
+CSHL_001,trained 1b
+CSHL_001,ready4ephysrig
+CSHL_002,in training
+CSHL_002,
+CSHL_002,trained 1b
+CSHL_002,unbiasable
+CSHL_002,ready4ephysrig
+CSHL_002,ready4delay
+CSHL_003,in training
+CSHL_003,
+CSHL_003,trained 1a
+CSHL_003,trained 1b
+CSHL_003,ready4ephysrig
+CSHL_003,ready4delay
+CSHL_004,in training
+CSHL_004,
+CSHL_004,trained 1b
+CSHL_005,in training
+CSHL_005,
+CSHL_005,trained 1a
+CSHL_005,trained 1b
+CSHL_005,ready4ephysrig
+CSHL_006,
+CSHL_006,trained 1a
+CSHL_006,untrainable
+CSHL_006,in training
+CSHL_007,in training
+CSHL_007,
+CSHL_007,trained 1a
+CSHL_007,trained 1b
+CSHL_007,unbiasable
+CSHL_007,ready4ephysrig
+CSHL_007,ready4delay
+CSHL_008,in training
+CSHL_008,
+CSHL_008,trained 1b
+CSHL_008,ready4ephysrig
+CSHL_008,ready4delay
+CSHL_010,in training
+CSHL_010,
+CSHL_010,trained 1a
+CSHL_010,trained 1b
+CSHL_010,ready4ephysrig
+CSHL_012,in training
+CSHL_012,
+CSHL_012,trained 1a
+CSHL_012,trained 1b
+CSHL_012,ready4ephysrig
+CSHL_014,in training
+CSHL_014,
+CSHL_014,trained 1a
+CSHL_014,trained 1b
+CSHL_014,ready4ephysrig
+CSHL_014,ready4delay
+CSHL_015,in training
+CSHL_015,
+CSHL_015,trained 1a
+CSHL_015,trained 1b
+CSHL_015,ready4ephysrig
+CSHL_015,ready4delay
+CSH_ZAD_001,in training
+CSH_ZAD_001,
+CSH_ZAD_001,trained 1a
+CSH_ZAD_001,trained 1b
+CSH_ZAD_001,ready4ephysrig
+CSH_ZAD_001,ready4delay
+CSH_ZAD_002,in training
+CSH_ZAD_002,
+CSH_ZAD_002,trained 1a
+CSH_ZAD_002,trained 1b
+CSH_ZAD_002,ready4ephysrig
+CSH_ZAD_003,in training
+CSH_ZAD_003,
+CSH_ZAD_003,trained 1b
+CSH_ZAD_003,ready4ephysrig
+CSH_ZAD_004,in training
+CSH_ZAD_004,
+CSH_ZAD_004,trained 1a
+CSH_ZAD_004,trained 1b
+CSH_ZAD_004,ready4ephysrig
+CSH_ZAD_005,in training
+CSH_ZAD_005,
+CSH_ZAD_005,trained 1a
+CSH_ZAD_005,trained 1b
+CSH_ZAD_006,in training
+CSH_ZAD_006,
+CSH_ZAD_006,trained 1a
+CSH_ZAD_006,trained 1b
+CSH_ZAD_006,ready4ephysrig
+CSH_ZAD_007,in training
+CSH_ZAD_007,
+CSH_ZAD_007,trained 1a
+CSH_ZAD_007,trained 1b
+CSH_ZAD_007,ready4ephysrig
+CSH_ZAD_010,in training
+CSH_ZAD_010,
+CSH_ZAD_010,trained 1b
+CSH_ZAD_010,ready4ephysrig
+CSH_ZAD_011,in training
+CSH_ZAD_011,
+CSH_ZAD_011,trained 1a
+CSH_ZAD_011,trained 1b
+CSH_ZAD_011,ready4ephysrig
+CSH_ZAD_011,ready4delay
+CSH_ZAD_017,in training
+CSH_ZAD_017,
+CSH_ZAD_017,trained 1a
+CSH_ZAD_017,trained 1b
+CSH_ZAD_017,ready4ephysrig
+CSH_ZAD_017,ready4delay
+CSH_ZAD_022,in training
+CSH_ZAD_022,
+CSH_ZAD_022,trained 1a
+CSH_ZAD_022,trained 1b
+CSH_ZAD_022,ready4ephysrig
+CSH_ZAD_022,ready4delay
+DY_001,in training
+DY_001,
+DY_001,trained 1a
+DY_001,trained 1b
+DY_001,ready4ephysrig
+DY_002,in training
+DY_002,
+DY_002,trained 1a
+DY_002,trained 1b
+DY_002,ready4ephysrig
+DY_003,in training
+DY_003,
+DY_003,trained 1a
+DY_003,trained 1b
+DY_003,ready4ephysrig
+DY_005,in training
+DY_005,
+DY_005,trained 1a
+DY_005,trained 1b
+DY_006,in training
+DY_006,
+DY_006,trained 1a
+DY_006,trained 1b
+DY_006,ready4ephysrig
+DY_006,ready4delay
+DY_007,in training
+DY_007,
+DY_007,trained 1b
+DY_007,ready4ephysrig
+DY_008,in training
+DY_008,
+DY_008,trained 1a
+DY_008,trained 1b
+DY_008,ready4ephysrig
+DY_008,ready4delay
+DY_008,ready4recording
+DY_009,in training
+DY_009,
+DY_009,trained 1a
+DY_009,trained 1b
+DY_009,ready4ephysrig
+DY_009,ready4delay
+DY_009,ready4recording
+DY_010,in training
+DY_010,
+DY_010,trained 1a
+DY_010,trained 1b
+DY_010,ready4ephysrig
+DY_010,ready4delay
+DY_010,ready4recording
+DY_011,in training
+DY_011,
+DY_011,trained 1a
+DY_011,trained 1b
+DY_011,ready4ephysrig
+DY_011,ready4delay
+DY_011,ready4recording
+DY_013,in training
+DY_013,
+DY_013,trained 1b
+DY_013,ready4ephysrig
+DY_013,ready4delay
+DY_013,ready4recording
+DY_014,in training
+DY_014,
+DY_014,trained 1a
+DY_014,trained 1b
+DY_014,ready4ephysrig
+DY_014,ready4delay
+DY_015,in training
+DY_015,
+DY_015,trained 1a
+IBL-T1,in training
+IBL-T1,
+IBL-T1,trained 1a
+IBL-T1,trained 1b
+IBL-T1,unbiasable
+IBL-T1,ready4ephysrig
+IBL-T1,ready4delay
+IBL-T2,in training
+IBL-T2,
+IBL-T2,trained 1a
+IBL-T2,trained 1b
+IBL-T2,ready4ephysrig
+IBL-T2,ready4delay
+IBL-T3,in training
+IBL-T3,
+IBL-T3,trained 1a
+IBL-T3,trained 1b
+IBL-T3,ready4ephysrig
+IBL-T4,in training
+IBL-T4,
+IBL-T4,trained 1a
+IBL-T4,trained 1b
+IBL-T4,ready4ephysrig
+IBL-T4,ready4delay
+IBL_001,in training
+IBL_001,
+IBL_001,untrainable
+IBL_001,trained 1a
+IBL_001,trained 1b
+IBL_002,in training
+IBL_002,
+IBL_002,trained 1b
+IBL_002,ready4ephysrig
+KS002,in training
+KS002,
+KS002,untrainable
+KS002,trained 1a
+KS002,trained 1b
+KS002,ready4ephysrig
+KS002,ready4delay
+KS004,in training
+KS004,
+KS004,untrainable
+KS004,trained 1a
+KS004,trained 1b
+KS004,ready4delay
+KS005,in training
+KS005,
+KS005,trained 1a
+KS005,trained 1b
+KS005,ready4ephysrig
+KS014,
+KS014,in training
+KS014,trained 1a
+KS014,trained 1b
+KS014,ready4ephysrig
+KS014,ready4delay
+KS015,
+KS015,in training
+KS015,trained 1b
+KS015,ready4ephysrig
+KS015,ready4delay
+KS016,
+KS016,in training
+KS016,trained 1a
+KS016,trained 1b
+KS016,ready4ephysrig
+KS016,ready4delay
+KS017,in training
+KS017,
+KS017,trained 1a
+KS017,trained 1b
+KS017,ready4ephysrig
+KS018,in training
+KS018,
+KS018,trained 1a
+KS018,trained 1b
+KS019,in training
+KS019,
+KS019,trained 1a
+KS019,trained 1b
+KS019,unbiasable
+KS019,ready4delay
+KS020,in training
+KS020,
+KS020,trained 1a
+KS020,trained 1b
+KS020,ready4ephysrig
+KS020,ready4delay
+KS021,in training
+KS021,
+KS021,trained 1a
+KS021,trained 1b
+KS021,ready4ephysrig
+KS022,in training
+KS022,
+KS022,trained 1a
+KS022,trained 1b
+KS022,ready4ephysrig
+KS022,ready4delay
+KS023,in training
+KS023,
+KS023,trained 1a
+KS023,trained 1b
+KS023,ready4ephysrig
+KS023,ready4delay
+KS024,in training
+KS024,
+KS024,trained 1a
+KS024,trained 1b
+KS024,ready4ephysrig
+KS024,ready4delay
+KS025,in training
+KS025,
+KS025,trained 1a
+KS025,trained 1b
+KS025,ready4ephysrig
+NYU-01,in training
+NYU-01,
+NYU-01,trained 1a
+NYU-01,trained 1b
+NYU-01,unbiasable
+NYU-01,ready4ephysrig
+NYU-02,in training
+NYU-02,
+NYU-02,trained 1a
+NYU-02,trained 1b
+NYU-02,ready4ephysrig
+NYU-04,
+NYU-04,in training
+NYU-04,trained 1b
+NYU-04,ready4ephysrig
+NYU-04,ready4delay
+NYU-06,in training
+NYU-06,
+NYU-06,trained 1a
+NYU-06,trained 1b
+NYU-06,ready4ephysrig
+NYU-07,in training
+NYU-07,
+NYU-07,trained 1b
+NYU-09,in training
+NYU-09,
+NYU-09,trained 1a
+NYU-09,trained 1b
+NYU-09,ready4ephysrig
+NYU-09,ready4delay
+NYU-09,ready4recording
+NYU-11,in training
+NYU-11,
+NYU-11,trained 1a
+NYU-11,trained 1b
+NYU-11,ready4ephysrig
+NYU-11,ready4delay
+NYU-12,in training
+NYU-12,
+NYU-12,trained 1a
+NYU-12,trained 1b
+NYU-12,ready4ephysrig
+NYU-12,ready4delay
+NYU-12,ready4recording
+NYU-13,in training
+NYU-13,
+NYU-13,trained 1a
+NYU-13,trained 1b
+NYU-13,ready4ephysrig
+NYU-13,ready4delay
+NYU-14,in training
+NYU-14,
+NYU-14,trained 1a
+NYU-14,trained 1b
+NYU-14,ready4ephysrig
+NYU-14,ready4delay
+NYU-20,in training
+NYU-20,
+NYU-20,trained 1a
+NYU-20,trained 1b
+NYU-20,ready4ephysrig
+NYU-20,ready4delay
+SWC_001,in training
+SWC_001,
+SWC_001,untrainable
+SWC_001,trained 1b
+SWC_013,in training
+SWC_013,
+SWC_013,trained 1a
+SWC_013,trained 1b
+SWC_013,ready4ephysrig
+SWC_013,ready4delay
+SWC_014,in training
+SWC_014,
+SWC_014,trained 1a
+SWC_014,trained 1b
+SWC_014,ready4ephysrig
+SWC_014,ready4delay
+SWC_014,ready4recording
+SWC_015,in training
+SWC_015,
+SWC_015,trained 1a
+SWC_015,trained 1b
+SWC_015,ready4ephysrig
+SWC_015,ready4delay
+SWC_017,in training
+SWC_017,
+SWC_017,untrainable
+SWC_017,trained 1a
+SWC_017,trained 1b
+SWC_017,ready4ephysrig
+SWC_017,ready4delay
+SWC_018,in training
+SWC_018,
+SWC_018,trained 1a
+SWC_018,trained 1b
+SWC_018,ready4ephysrig
+SWC_018,ready4delay
+SWC_021,in training
+SWC_021,
+SWC_021,trained 1b
+SWC_021,ready4ephysrig
+SWC_021,ready4delay
+SWC_022,in training
+SWC_022,
+SWC_022,trained 1a
+SWC_022,trained 1b
+SWC_022,ready4ephysrig
+SWC_023,in training
+SWC_023,
+SWC_023,trained 1a
+SWC_023,trained 1b
+SWC_023,ready4ephysrig
+SWC_023,ready4delay
+SWC_029,in training
+SWC_029,
+SWC_029,untrainable
+SWC_029,trained 1a
+SWC_029,trained 1b
+SWC_029,ready4ephysrig
+SWC_029,ready4delay
+SWC_030,in training
+SWC_030,
+SWC_030,untrainable
+SWC_030,trained 1a
+SWC_030,trained 1b
+SWC_030,ready4ephysrig
+SWC_030,ready4delay
+SWC_038,in training
+SWC_038,
+SWC_038,trained 1a
+SWC_038,trained 1b
+SWC_038,ready4ephysrig
+SWC_038,ready4delay
+SWC_039,in training
+SWC_039,
+SWC_039,trained 1a
+SWC_039,trained 1b
+SWC_039,ready4delay
+SWC_042,in training
+SWC_042,
+SWC_042,trained 1a
+SWC_042,trained 1b
+SWC_042,ready4ephysrig
+SWC_042,ready4delay
+ZM_1084,trained 1a
+ZM_1084,
+ZM_1084,ready4ephysrig
+ZM_1084,trained 1b
+ZM_1085,in training
+ZM_1085,
+ZM_1085,trained 1a
+ZM_1085,trained 1b
+ZM_1085,ready4ephysrig
+ZM_1086,in training
+ZM_1086,
+ZM_1086,trained 1a
+ZM_1086,trained 1b
+ZM_1087,in training
+ZM_1087,
+ZM_1087,trained 1a
+ZM_1087,trained 1b
+ZM_1087,ready4ephysrig
+ZM_1089,in training
+ZM_1089,
+ZM_1089,trained 1a
+ZM_1089,trained 1b
+ZM_1091,in training
+ZM_1091,
+ZM_1091,trained 1b
+ZM_1091,ready4ephysrig
+ZM_1092,in training
+ZM_1092,
+ZM_1092,trained 1b
+ZM_1092,ready4ephysrig
+ZM_1093,in training
+ZM_1093,
+ZM_1093,trained 1a
+ZM_1093,trained 1b
+ZM_1095,in training
+ZM_1095,
+ZM_1095,trained 1b
+ZM_1097,in training
+ZM_1097,
+ZM_1097,trained 1a
+ZM_1097,trained 1b
+ZM_1097,ready4ephysrig
+ZM_1098,in training
+ZM_1098,
+ZM_1098,trained 1a
+ZM_1098,trained 1b
+ZM_1098,ready4ephysrig
+ZM_1367,in training
+ZM_1367,
+ZM_1367,trained 1a
+ZM_1367,trained 1b
+ZM_1367,ready4delay
+ZM_1369,in training
+ZM_1369,
+ZM_1369,trained 1a
+ZM_1369,trained 1b
+ZM_1369,ready4ephysrig
+ZM_1371,in training
+ZM_1371,
+ZM_1371,trained 1a
+ZM_1371,trained 1b
+ZM_1371,ready4ephysrig
+ZM_1372,in training
+ZM_1372,
+ZM_1372,trained 1a
+ZM_1372,trained 1b
+ZM_1372,ready4ephysrig
+ZM_1373,in training
+ZM_1373,
+ZM_1373,trained 1a
+ZM_1743,in training
+ZM_1743,
+ZM_1743,trained 1a
+ZM_1743,trained 1b
+ZM_1743,ready4ephysrig
+ZM_1743,ready4delay
+ZM_1745,in training
+ZM_1745,
+ZM_1745,trained 1a
+ZM_1745,trained 1b
+ZM_1745,ready4ephysrig
+ZM_1745,ready4delay
+ZM_1745,ready4recording
+ZM_1746,in training
+ZM_1746,
+ZM_1746,trained 1a
+ZM_1746,trained 1b
+ZM_1746,ready4ephysrig
+ZM_1746,ready4delay
+ZM_1897,in training
+ZM_1897,
+ZM_1897,trained 1a
+ZM_1897,trained 1b
+ZM_1897,ready4ephysrig
+ZM_1897,ready4delay
+ZM_1897,ready4recording
+ZM_1898,in training
+ZM_1898,
+ZM_1898,trained 1a
+ZM_1898,trained 1b
+ZM_1898,ready4ephysrig
+ZM_1898,ready4delay
+ZM_1898,ready4recording
+ZM_1928,in training
+ZM_1928,
+ZM_1928,trained 1a
+ZM_2106,in training
+ZM_2106,
+ZM_2106,trained 1a
+ZM_2107,in training
+ZM_2107,
+ZM_2107,trained 1a
+ZM_2107,trained 1b
+ZM_2107,ready4ephysrig
+ZM_2107,ready4delay
+ZM_2107,ready4recording
+ZM_2240,in training
+ZM_2240,
+ZM_2240,trained 1a
+ZM_2240,trained 1b
+ZM_2240,ready4ephysrig
+ZM_2240,ready4delay
+ZM_2240,ready4recording
+ZM_2241,in training
+ZM_2241,
+ZM_2241,trained 1b
+ZM_2241,ready4ephysrig
+ZM_2241,ready4delay
+ZM_2241,ready4recording
+ZM_2245,in training
+ZM_2245,
+ZM_2245,trained 1b
+ZM_2245,ready4ephysrig
+ZM_2245,ready4delay
+ZM_2245,ready4recording
+ZM_3001,in training
+ZM_3001,
+ZM_3001,trained 1a
+ZM_3001,trained 1b
+ZM_3001,ready4ephysrig
+ZM_3001,ready4delay
+ZM_3002,in training
+ZM_3002,
+ZM_3002,trained 1a
+ZM_3002,trained 1b
+ZM_3003,in training
+ZM_3003,
+ZM_3003,trained 1a
+ZM_3003,trained 1b
+ZM_3003,ready4delay
+ZM_3003,ready4recording
+ZM_3004,in training
+ZM_3004,
+ZM_3004,trained 1a
+ZM_3004,trained 1b
+ZM_3004,ready4ephysrig
+ZM_3004,ready4delay
+ZM_3006,in training
+ZM_3006,
+ZM_3006,trained 1a
+ibl_witten_02,in training
+ibl_witten_02,
+ibl_witten_02,trained 1a
+ibl_witten_03,in training
+ibl_witten_03,
+ibl_witten_03,trained 1a
+ibl_witten_03,trained 1b
+ibl_witten_04,in training
+ibl_witten_04,
+ibl_witten_04,trained 1a
+ibl_witten_04,trained 1b
+ibl_witten_04,ready4ephysrig
+ibl_witten_04,ready4delay
+ibl_witten_05,in training
+ibl_witten_05,
+ibl_witten_05,trained 1b
+ibl_witten_05,unbiasable
+ibl_witten_06,in training
+ibl_witten_06,
+ibl_witten_06,trained 1a
+ibl_witten_06,trained 1b
+ibl_witten_06,ready4ephysrig
+ibl_witten_07,in training
+ibl_witten_07,
+ibl_witten_07,untrainable
+ibl_witten_07,trained 1a
+ibl_witten_07,trained 1b
+ibl_witten_07,ready4ephysrig
+ibl_witten_07,ready4delay
+ibl_witten_12,in training
+ibl_witten_12,
+ibl_witten_12,trained 1a
+ibl_witten_12,trained 1b
+ibl_witten_12,ready4ephysrig
+ibl_witten_12,ready4delay
+ibl_witten_12,ready4recording
+ibl_witten_13,in training
+ibl_witten_13,
+ibl_witten_13,trained 1a
+ibl_witten_13,trained 1b
+ibl_witten_13,ready4ephysrig
+ibl_witten_13,ready4delay
+ibl_witten_14,in training
+ibl_witten_14,
+ibl_witten_14,trained 1a
+ibl_witten_14,trained 1b
+ibl_witten_14,ready4ephysrig
+ibl_witten_14,ready4delay
+ibl_witten_15,in training
+ibl_witten_15,
+ibl_witten_15,trained 1b
+ibl_witten_15,ready4ephysrig
+ibl_witten_16,in training
+ibl_witten_16,
+ibl_witten_16,trained 1a
+ibl_witten_16,trained 1b
+ibl_witten_16,ready4ephysrig
+ibl_witten_17,in training
+ibl_witten_17,
+ibl_witten_17,trained 1a
+ibl_witten_17,trained 1b
+ibl_witten_17,ready4ephysrig
+ibl_witten_17,ready4delay
+ibl_witten_17,ready4recording
+ibl_witten_19,in training
+ibl_witten_19,
+ibl_witten_19,trained 1a
+ibl_witten_19,trained 1b
+ibl_witten_19,ready4ephysrig
+ibl_witten_19,ready4delay
+ibl_witten_19,ready4recording
+ibl_witten_20,in training
+ibl_witten_20,
+ibl_witten_20,trained 1a
+ibl_witten_20,trained 1b
+ibl_witten_20,ready4ephysrig
+ibl_witten_20,ready4delay
+ibl_witten_20,ready4recording

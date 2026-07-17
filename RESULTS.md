@@ -1,0 +1,101 @@
+# Q9 - PsyTrack results
+
+Started from the FD_28 pilot (see `psytrack_single_mouse.py`), scaled up to
+the full mouse sheet. Notes below, roughly in the order I found things.
+
+## The fit itself
+
+PsyTrack, 3 weights (bias, contrast, prevChoice), same setup as the single
+mouse version. 37/38 mice fit clean - SWC_023 dropped, only 50 trials and
+a 70% miss rate, not worth trying to fit.
+
+Found and fixed a real bug early on: `choice == -1` is actually Right and
+`choice == 1` is Left in the raw data, opposite of what I assumed. Verified
+using trials where only one side had contrast and was marked correct, so
+ground truth was known for sure.
+
+## Q6 - are some mice more stationary than others
+
+Yes, pretty clearly. `contrast_std` (how much the contrast weight moves
+around within a session) ranges from basically 0 (DY_009 - flat, one
+strategy the whole time) to ~7.4 (ibl_witten_13 - swings a lot). Full numbers
+in `psytrack_results.csv`.
+
+## Pupil vs contrast weight - null
+
+FD_28 alone showed r = -0.544 between pre-trial pupil and contrast weight,
+looked like a real effect. Didn't hold up: across 35 mice, mean r = 0.036,
+p = 0.48, split ~50/50 in direction. Doesn't generalize. Pilot mouse was
+probably just unusual.
+
+## Engagement vs contrast weight - actually significant
+
+Tried a different angle after the pupil thing didn't pan out - built a
+rolling engagement score based on Steinmetz et al 2019 (they define
+disengagement via miss/no-go streaks, same task as ours). Made it
+continuous instead of their binary version.
+
+Across 28 mice with usable data (9 had zero miss trials at all, so nothing
+to correlate against - checked this, not a bug): mean r = -0.11, p = 0.008,
+68% of mice same direction. Actually holds up, unlike pupil.
+
+## Trained-mice check
+
+Liza said only ~5 mice were trained with pupil data, my first check (best
+ever training status per mouse) said all 37 were trained-tier - these
+aren't the same question. Best-ever status doesn't tell you whether the
+specific session was recorded before or after the mouse got there.
+
+Pulled actual session dates + session-linked training status (see
+`pull_training_status.py` - this took forever, ONE-api kept throwing
+ambiguous errors, writeup of what actually worked is in the script comments)
+and matched them properly (`check_trained_at_recording.py`). Result:
+120/120 sessions across all 38 mice were recorded post-training. No
+contamination. Pupil and engagement results above don't need any caveat.
+
+## Still open
+
+- mice_pupil.csv has no response_times/firstMovement_times, need these for
+  anyone doing HDDM
+- Q2 (lapse probability) is the one gap left in the core template questions
+  that I haven't touched
+- worth checking if engagement variability explains some of the Q6 spread -
+  haven't tested this yet
+
+## Files here
+
+- `psytrack_single_mouse.py` - original FD_28 fit
+- `psytrack_multi_mouse.py` - all mice + pupil/engagement correlations
+- `pull_training_status.py` - session-linked training status pull
+- `check_trained_at_recording.py` - the as-of merge for the trained-mice check
+- `psytrack_results.csv` - per-mouse results
+- `mice_status_by_session.csv` / `sessions_with_status_at_time.csv` - training status stuff
+
+## Non-linearity check on pupil (prompted by Varad's question)
+
+A null linear result doesn't rule out a non-linear one, so fit a quadratic
+model (contrast_weight ~ pupil + pupil^2) across all 35 mice with valid pupil
+data - relevant given Hulsey et al. 2024's HMM-based inverted-U finding
+(this is the paper previously misfiled as "McGinley et al." - McCormick was
+McGinley's PI, easy mixup, corrected here).
+
+Mean R^2 improves modestly, 0.084 (linear) to 0.120 (quadratic). 24/35 mice
+(69%) show a U-shape, not the inverted-U the literature predicts - only
+11/35 (31%) go the expected direction.
+
+Robustness check (IQR outlier removal, 9/35 mice flagged): direction holds
+(69% U-shape either way), but strength doesn't - median drops to ~0, and
+Wilcoxon signed-rank test is no longer significant (p = 0.136) without the
+high-leverage mice. Honest read: modest, directionally-consistent lean
+toward U-shape, not a solid effect on its own.
+
+Doesn't necessarily contradict Hulsey et al. - they use pupil AND movement
+together via discrete HMM states on raw performance; this is pupil alone,
+continuous regression, against a model-derived weight. Different method,
+different outcome variable.
+
+Ran the same outlier check on the engagement result for comparison: zero
+outliers detected, result completely unchanged (p = 0.008 either way).
+Engagement is the solid, load-bearing finding; the pupil U-shape is a
+weaker, secondary observation.
+

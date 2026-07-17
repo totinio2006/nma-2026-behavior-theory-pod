@@ -1,0 +1,16 @@
+n mice: 35
+median quad_coeff: 0.0056922453246549
+mean quad_coeff: 0.05861366407569773
+n positive (U-shape): 24
+n negative (inverted-U): 11
+
+IQR bounds: [-0.0526, 0.0787]
+outlier mice: ['CSHL051', 'SWC_042', 'ZM_2245', 'DY_014', 'KS016', 'SWC_039', 'ZM_2240', 'ZM_2241', 'ibl_witten_13']
+
+WITHOUT outliers:
+n mice: 26
+n positive (U-shape): 18
+n negative (inverted-U): 8
+median: 0.0009235377300295001
+mean: 0.005497194546616152
+wilcoxon signed-rank test (median != 0): statistic= 116.0 p= 0.13578131794929504
