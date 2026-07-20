@@ -1,16 +1,20 @@
 """
-Q9/Q6 - same PsyTrack fit as psytrack_single_mouse.py, looped across mice.
-Tests engagement and pupil (linear + quadratic) against contrast weight.
+Q9/Q6 - PsyTrack fit looped across mice, plus pupil/engagement correlations,
+non-linearity check, Q6 link test, and a shuffle-based permutation control
+on the engagement result.
 """
 
 import numpy as np
 import pandas as pd
 import psytrack as psy
+from scipy import stats as st
 
 DATA_PATH = 'mice_pupil.csv'
 OUTPUT_PATH = 'psytrack_results.csv'
 MIN_TRIALS = 50
 ENGAGEMENT_WINDOW = 10
+N_SHUFFLES = 1000
+np.random.seed(0)  # reproducible shuffles
 
 
 def get_mouse_column(df):
@@ -39,7 +43,7 @@ def fit_one_mouse(mouse_df):
     trials = trials[trials['choice'] != 0].reset_index(drop=True)
 
     if len(trials) < MIN_TRIALS:
-        return None
+        return None, None
 
     pupil_by_trial = compute_pretrial_pupil(mouse_df)
     trials['pre_trial_pupil'] = trials['trial'].map(pupil_by_trial)
@@ -63,11 +67,11 @@ def fit_one_mouse(mouse_df):
         hyp, evd, wMode, _ = psy.hyperOpt(dat, hyper, weights, ['sigma'])
     except Exception as e:
         print(f"  fit failed: {e}")
-        return None
+        return None, None
 
     if np.isnan(wMode).any() or np.isinf(wMode).any():
         print("  fit produced NaN/Inf, skipping")
-        return None
+        return None, None
 
     names = sorted(weights.keys())
     stats = {'n_trials': len(trials), 'log_evidence': evd}
@@ -94,7 +98,7 @@ def fit_one_mouse(mouse_df):
         ss_res = np.sum((y_fit - y_pred) ** 2)
         ss_tot = np.sum((y_fit - y_fit.mean()) ** 2)
         stats['r2_quadratic'] = 1 - ss_res / ss_tot if ss_tot > 0 else np.nan
-        stats['quad_coeff'] = coeffs[0]  # positive = U-shape, negative = inverted-U
+        stats['quad_coeff'] = coeffs[0]
     else:
         stats['pupil_contrast_corr'] = np.nan
         stats['pupil_n_valid'] = int(valid.sum())
@@ -104,14 +108,20 @@ def fit_one_mouse(mouse_df):
 
     eng_vals = trials['engagement_score'].values
     eng_valid = ~np.isnan(eng_vals)
+    raw_for_shuffle = None
     if eng_valid.sum() >= 10:
-        stats['engagement_contrast_corr'] = np.corrcoef(eng_vals[eng_valid], contrast_traj[eng_valid])[0, 1]
+        e = eng_vals[eng_valid]
+        c = contrast_traj[eng_valid]
+        stats['engagement_contrast_corr'] = np.corrcoef(e, c)[0, 1]
         stats['engagement_n_valid'] = int(eng_valid.sum())
+        stats['engagement_std'] = np.nanstd(e)
+        raw_for_shuffle = (e, c)  # needed later for the shuffle control
     else:
         stats['engagement_contrast_corr'] = np.nan
         stats['engagement_n_valid'] = int(eng_valid.sum())
+        stats['engagement_std'] = np.nan
 
-    return stats
+    return stats, raw_for_shuffle
 
 
 def main():
@@ -121,14 +131,17 @@ def main():
     print(f"{len(mice)} mice found")
 
     rows = []
+    raw_data = {}  # mouse_id -> (engagement_array, contrast_traj_array)
     for mouse_id in mice:
         print(f"fitting {mouse_id}...")
-        stats = fit_one_mouse(df[df[mouse_col] == mouse_id])
+        stats, raw = fit_one_mouse(df[df[mouse_col] == mouse_id])
         if stats is None:
             print(f"  skipped {mouse_id}")
             continue
         stats['mouse_id'] = mouse_id
         rows.append(stats)
+        if raw is not None:
+            raw_data[mouse_id] = raw
 
     results = pd.DataFrame(rows)
     print(f"\nfit {len(results)}/{len(mice)} mice successfully")
@@ -136,6 +149,38 @@ def main():
 
     results.to_csv(OUTPUT_PATH, index=False)
     print(f"\nsaved to {OUTPUT_PATH}")
+
+    # Q6 link test
+    valid_q6 = results.dropna(subset=['engagement_std', 'contrast_std'])
+    if len(valid_q6) >= 10:
+        r, p = st.pearsonr(valid_q6['engagement_std'], valid_q6['contrast_std'])
+        print(f"\nEngagement variability vs contrast_std (Q6 link): n={len(valid_q6)}, r={r:.3f}, p={p:.3f}")
+
+    # Shuffle-based permutation control on the engagement result
+    real_corrs = results['engagement_contrast_corr'].dropna().values
+    real_mean_r = real_corrs.mean()
+    print(f"\nReal engagement-contrast mean r across {len(real_corrs)} mice: {real_mean_r:.4f}")
+    print(f"Running {N_SHUFFLES} shuffles for permutation control...")
+
+    null_means = []
+    for i in range(N_SHUFFLES):
+        shuffled_rs = []
+        for mouse_id, (e, c) in raw_data.items():
+            e_shuffled = np.random.permutation(e)
+            r = np.corrcoef(e_shuffled, c)[0, 1]
+            if not np.isnan(r):
+                shuffled_rs.append(r)
+        null_means.append(np.mean(shuffled_rs))
+    null_means = np.array(null_means)
+
+    # two-tailed empirical p-value
+    p_empirical = np.mean(np.abs(null_means) >= np.abs(real_mean_r))
+    print(f"\nNull distribution (shuffled): mean={null_means.mean():.4f}, std={null_means.std():.4f}")
+    print(f"Empirical p-value (real vs shuffled null): {p_empirical:.4f}")
+    if p_empirical < 0.05:
+        print("Real correlation is significantly more extreme than the shuffled null - result survives the control.")
+    else:
+        print("Real correlation is NOT clearly distinguishable from the shuffled null - worth scrutinizing further.")
 
 
 if __name__ == '__main__':

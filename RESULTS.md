@@ -121,3 +121,20 @@ above, from a different species-adjacent paradigm.
 They also found V1 spike counts drop significantly during disengagement,
 giving a plausible neural mechanism for why engagement (not pupil) tracks
 performance.	
+
+## Shuffle control on the engagement result
+
+Ran a permutation control to rule out the engagement-contrast correlation being
+a pipeline artifact or spurious shared-trend effect. For each mouse, shuffled its
+engagement scores relative to its contrast-weight trajectory (breaking the real
+trial-by-trial link while keeping each mouse's own data distribution intact),
+recomputed the population mean correlation, repeated 1000 times to build a null
+distribution.
+
+Real mean r = -0.107. Null distribution: mean = 0.0001, std = 0.0074. Empirical
+p-value = 0.0000 (real result more extreme than all 1000 shuffles).
+
+This is a strong validation - not just significant, but a complete separation
+from the shuffled null. The engagement-contrast relationship survives outlier
+removal (unchanged, see earlier) AND this permutation control. This is the most
+solid result to come out of Q9.
