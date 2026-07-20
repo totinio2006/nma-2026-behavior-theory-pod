@@ -138,3 +138,15 @@ This is a strong validation - not just significant, but a complete separation
 from the shuffled null. The engagement-contrast relationship survives outlier
 removal (unchanged, see earlier) AND this permutation control. This is the most
 solid result to come out of Q9.
+
+Also consistent with Saderi, Schwartz, Heller, Pennington & David (2021, eLife),
+"Dissociation of task engagement and arousal effects in auditory cortex and
+midbrain" (found by Varad) - they show that task engagement and pupil-indexed
+arousal modulate largely independent neural populations, with engagement effects
+more prominent in cortex (A1) and arousal effects more prominent in midbrain (IC).
+This suggests engagement and arousal may be dissociable at the circuit level more
+broadly, not just in this specific dataset - a plausible biological explanation for
+why our engagement measure outperforms pupil: engagement may be closer to the
+decision-to-act circuit than to the general arousal pathway pupil indexes. Note
+this study used ferrets performing an auditory task, not mice on a visual task, so
+it supports the general principle rather than being a direct replication.
