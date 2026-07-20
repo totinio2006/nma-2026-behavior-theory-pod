@@ -150,3 +150,24 @@ why our engagement measure outperforms pupil: engagement may be closer to the
 decision-to-act circuit than to the general arousal pathway pupil indexes. Note
 this study used ferrets performing an auditory task, not mice on a visual task, so
 it supports the general principle rather than being a direct replication.
+
+## Engagement shape across a session (prompted by Ishayu's early/middle/late split)
+
+Tested whether engagement follows the same early/middle/late pattern as Ishayu's
+significant beta result (rise then fall). Split each mouse's full trial sequence
+into thirds and averaged the engagement score in each.
+
+n=37, paired t-test (early vs late): t=3.789, p=0.0006. Mean engagement - early:
+0.999, middle: 0.995, late: 0.982.
+
+Real effect, but a different shape than expected: engagement steadily declines
+across the session rather than rising then falling. Doesn't confirm the
+"settles in, then fatigues" hypothesis in its exact form - more like engagement
+just steadily erodes from the start, no early warm-up bump.
+
+Robustness check: removed 3 highest-leverage mice (IQR method) - result barely
+changes (p=0.0011). Also confirmed non-parametrically (Wilcoxon signed-rank,
+p=0.0001). Genuinely robust, unlike the pupil quadratic result.
+
+12/37 mice show zero change at all (perfectly flat engagement all session) -
+consistent with many mice having very few miss trials overall.

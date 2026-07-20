@@ -1,7 +1,7 @@
 """
-Q9/Q6 - PsyTrack fit looped across mice, plus pupil/engagement correlations,
-non-linearity check, Q6 link test, and a shuffle-based permutation control
-on the engagement result.
+Q9/Q6 - PsyTrack fit looped across mice, pupil/engagement correlations,
+non-linearity check, Q6 link test, shuffle control, and engagement
+early/middle/late shape test (parallel to Ishayu's beta split).
 """
 
 import numpy as np
@@ -14,7 +14,7 @@ OUTPUT_PATH = 'psytrack_results.csv'
 MIN_TRIALS = 50
 ENGAGEMENT_WINDOW = 10
 N_SHUFFLES = 1000
-np.random.seed(0)  # reproducible shuffles
+np.random.seed(0)
 
 
 def get_mouse_column(df):
@@ -33,6 +33,18 @@ def compute_engagement_score(mouse_df, window=ENGAGEMENT_WINDOW):
     miss_rate = is_miss.rolling(window=window, min_periods=1, center=True).mean()
     all_trials['engagement_score'] = 1 - miss_rate
     return all_trials[['trial', 'engagement_score']]
+
+
+def engagement_by_third(mouse_df, window=ENGAGEMENT_WINDOW):
+    """Split a mouse's full trial sequence into early/middle/late thirds,
+    same logic as Ishayu's beta split, and return mean engagement per third."""
+    eng = compute_engagement_score(mouse_df, window)
+    n = len(eng)
+    third = n // 3
+    early = eng.iloc[:third]['engagement_score'].mean()
+    middle = eng.iloc[third:2*third]['engagement_score'].mean()
+    late = eng.iloc[2*third:]['engagement_score'].mean()
+    return early, middle, late
 
 
 def fit_one_mouse(mouse_df):
@@ -115,11 +127,16 @@ def fit_one_mouse(mouse_df):
         stats['engagement_contrast_corr'] = np.corrcoef(e, c)[0, 1]
         stats['engagement_n_valid'] = int(eng_valid.sum())
         stats['engagement_std'] = np.nanstd(e)
-        raw_for_shuffle = (e, c)  # needed later for the shuffle control
+        raw_for_shuffle = (e, c)
     else:
         stats['engagement_contrast_corr'] = np.nan
         stats['engagement_n_valid'] = int(eng_valid.sum())
         stats['engagement_std'] = np.nan
+
+    early_e, mid_e, late_e = engagement_by_third(mouse_df)
+    stats['engagement_early'] = early_e
+    stats['engagement_middle'] = mid_e
+    stats['engagement_late'] = late_e
 
     return stats, raw_for_shuffle
 
@@ -131,7 +148,7 @@ def main():
     print(f"{len(mice)} mice found")
 
     rows = []
-    raw_data = {}  # mouse_id -> (engagement_array, contrast_traj_array)
+    raw_data = {}
     for mouse_id in mice:
         print(f"fitting {mouse_id}...")
         stats, raw = fit_one_mouse(df[df[mouse_col] == mouse_id])
@@ -150,13 +167,11 @@ def main():
     results.to_csv(OUTPUT_PATH, index=False)
     print(f"\nsaved to {OUTPUT_PATH}")
 
-    # Q6 link test
     valid_q6 = results.dropna(subset=['engagement_std', 'contrast_std'])
     if len(valid_q6) >= 10:
         r, p = st.pearsonr(valid_q6['engagement_std'], valid_q6['contrast_std'])
         print(f"\nEngagement variability vs contrast_std (Q6 link): n={len(valid_q6)}, r={r:.3f}, p={p:.3f}")
 
-    # Shuffle-based permutation control on the engagement result
     real_corrs = results['engagement_contrast_corr'].dropna().values
     real_mean_r = real_corrs.mean()
     print(f"\nReal engagement-contrast mean r across {len(real_corrs)} mice: {real_mean_r:.4f}")
@@ -173,14 +188,17 @@ def main():
         null_means.append(np.mean(shuffled_rs))
     null_means = np.array(null_means)
 
-    # two-tailed empirical p-value
     p_empirical = np.mean(np.abs(null_means) >= np.abs(real_mean_r))
     print(f"\nNull distribution (shuffled): mean={null_means.mean():.4f}, std={null_means.std():.4f}")
     print(f"Empirical p-value (real vs shuffled null): {p_empirical:.4f}")
-    if p_empirical < 0.05:
-        print("Real correlation is significantly more extreme than the shuffled null - result survives the control.")
-    else:
-        print("Real correlation is NOT clearly distinguishable from the shuffled null - worth scrutinizing further.")
+
+    valid_shape = results.dropna(subset=['engagement_early', 'engagement_late'])
+    if len(valid_shape) >= 10:
+        t, p = st.ttest_rel(valid_shape['engagement_early'], valid_shape['engagement_late'])
+        print(f"\nEngagement early vs late (paired t-test): n={len(valid_shape)}, t={t:.3f}, p={p:.4f}")
+        print(f"Mean engagement - early: {valid_shape['engagement_early'].mean():.3f}, "
+              f"middle: {valid_shape['engagement_middle'].mean():.3f}, "
+              f"late: {valid_shape['engagement_late'].mean():.3f}")
 
 
 if __name__ == '__main__':
